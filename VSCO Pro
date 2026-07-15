@@ -1,0 +1,10 @@
+#!name = VSCO Pro
+#!desc = Mở khóa toàn bộ bộ lọc màu và công cụ chỉnh sửa ảnh nâng cao của VSCO Pro.
+#!author = chxm1023
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/VSCO.png
+
+[Script]
+VSCOPro = type=http-response,pattern=^https:\/\/api\.vsco\.co\/api\/3\.0\/users\/.*\/profile,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Vsco.js
+
+[MITM]
+hostname = %APPEND% api.vsco.co
