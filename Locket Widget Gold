@@ -1,10 +1,14 @@
 #!name = Locket Widget Gold
 #!desc = Mở khóa các tính năng Gold/Premium của ứng dụng Locket Widget (Gửi ảnh HD, thêm nhiều bạn thân, tùy biến giao diện...).
-#!author = chxm1023
+#!author = duyvinh09
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Locket.png
 
 [Script]
-LocketGold = type=http-response,pattern=^https:\/\/api\.locket\.camera\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Locket.js
+#LocketGold
+#hostname = api.revenuecat.com
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Locket_DuyVinh09.js, requires-body=true, max-size=-1, timeout=60
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/deleteHeader.js, timeout=60
+#************************************#
 
 [MITM]
-hostname = %APPEND% api.locket.camera
+hostname = %APPEND% api.revenuecat.com
