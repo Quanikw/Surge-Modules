@@ -1,0 +1,35 @@
+#!name = All In One Premium (Quanikw - DuyVinh Source)
+#!desc = Bộ tổng hợp bẻ khóa Premium và chặn quảng cáo sử dụng mã nguồn tối ưu của duyvinh09 (YouTube, TikTok, Duolingo, Locket, Spotify, SoundCloud, VSCO, PicsArt, PhotoRoom).
+#!author = Quanikw
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Shadowrocket.png
+
+[Script]
+# 1. YouTube AdBlock & Background Play (DuyVinh)
+YouTubeAd = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reels\/create_reel_items|guide|blocklist|reels\/get_user_profile|multi_reels\/get_multi_reels|get_watch_playlist|shorts\/get_shorts_feed|get_kids_home|get_watch|suggest|get_search_suggestions),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/youtube.js
+
+# 2. TikTok Ads & Region (DuyVinh)
+TikTok = type=http-response,pattern=^https?:\/\/((tnc|dm)[\w-]+\.\w+\.com\/.+|.+\.(tiktokv|byteoversea)\.com\/(aweme\/v\d\/(feed|post|search\/item|mix\/aweme|multi\/aweme|follow\/feed|nearby\/feed|repost\/feed|repost\/list|music\/aweme|creative\/home\/board)|passport\/auth\/login_only\/|user\/profile\/self\/))+,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/tiktok.js
+
+# 3. Duolingo Super (DuyVinh)
+DuolingoSuper = type=http-response,pattern=^https:\/\/ios-api\.duolingo\.com\/2017-06-30\/users\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/duolingo.js
+
+# 4. Locket Widget Gold (DuyVinh)
+LocketGold = type=http-response,pattern=^https:\/\/api\.locket\.camera\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/locket.js
+
+# 5. Spotify Premium (DuyVinh)
+SpotifyPremium = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/bootstrap\/v1\/bootstrap,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/spotify.js
+
+# 6. SoundCloud Premium (DuyVinh)
+SoundCloudPremium = type=http-response,pattern=^https:\/\/api-v2\.soundcloud\.com\/me,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/soundcloud.js
+
+# 7. VSCO Pro (DuyVinh)
+VSCOPro = type=http-response,pattern=^https:\/\/api\.vsco\.co\/api\/3\.0\/users\/.*\/profile,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/vsco.js
+
+# 8. PicsArt Gold (DuyVinh)
+PicsArtGold = type=http-response,pattern=^https:\/\/api\.picsart\.com\/2\/users\/subscription,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/picsart.js
+
+# 9. PhotoRoom Pro (DuyVinh)
+PhotoRoomPro = type=http-response,pattern=^https:\/\/api\.photoroom\.com\/v1\/user\/subscription,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/main/Scripts/photoroom.js
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com, *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, *.duolingo.com, api.locket.camera, spclient.wg.spotify.com, api-v2.soundcloud.com, api.vsco.co, api.picsart.com, api.photoroom.com
