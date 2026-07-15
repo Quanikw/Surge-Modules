@@ -1,0 +1,10 @@
+#!name = Duolingo Super
+#!desc = Mở khóa các tính năng Premium của Duolingo (Vô hạn tim, không quảng cáo, làm bài test miễn phí).
+#!author = chxm1023
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Duolingo.png
+
+[Script]
+DuolingoSuper = type=http-response,pattern=^https:\/\/ios-api\.duolingo\.com\/2017-06-30\/users\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Duolingo.js
+
+[MITM]
+hostname = %APPEND% ios-api.duolingo.com
