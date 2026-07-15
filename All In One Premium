@@ -1,0 +1,32 @@
+#!name = All In One Premium (Quanikw)
+#!desc = Bộ công cụ tổng hợp bẻ khóa Premium và chặn quảng cáo (YouTube, TikTok, Duolingo, Alight Motion, Locket Widget, Spotify, SoundCloud, VSCO).
+#!author = Quanikw
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Shadowrocket.png
+
+[Script]
+# 1. YouTube AdBlock & Background Play
+YouTubeAd = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reels\/create_reel_items|guide|blocklist|reels\/get_user_profile|multi_reels\/get_multi_reels|get_watch_playlist|shorts\/get_shorts_feed|get_kids_home|get_watch|suggest|get_search_suggestions),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js
+
+# 2. TikTok Ads & Region
+TikTok = type=http-response,pattern=^https?:\/\/((tnc|dm)[\w-]+\.\w+\.com\/.+|.+\.(tiktokv|byteoversea)\.com\/(aweme\/v\d\/(feed|post|search\/item|mix\/aweme|multi\/aweme|follow\/feed|nearby\/feed|repost\/feed|repost\/list|music\/aweme|creative\/home\/board)|passport\/auth\/login_only\/|user\/profile\/self\/))+,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Scon6/Scripts/main/TikTok/tiktok.js
+
+# 3. Duolingo Super (Bản mới nhất)
+DuolingoNew = type=http-response,pattern=^https?:\/\/ios-api\.duolingo\.com\/.*\/users\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCuo/QuanX/main/Scripts/duolingo.js
+
+# 4. Alight Motion Premium
+AlightMotion = type=http-response,pattern=^https?:\/\/us-central1-alight-creative\.cloudfunctions\.net\/getAccountStatusAndLicenses,requires-body=1,max-size=131072,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/alightmotion.js
+
+# 5. Locket Widget Gold
+LocketGold = type=http-response,pattern=^https:\/\/api\.locket\.camera\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Locket.js
+
+# 6. Spotify Premium (Chặn quảng cáo, Next bài vô hạn)
+SpotifyPremium = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/bootstrap\/v1\/bootstrap,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Spotify.js
+
+# 7. SoundCloud Premium
+SoundCloudPremium = type=http-response,pattern=^https:\/\/api-v2\.soundcloud\.com\/me,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Soundcloud.js
+
+# 8. VSCO Pro
+VSCOPro = type=http-response,pattern=^https:\/\/api\.vsco\.co\/api\/3\.0\/users\/.*\/profile,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Vsco.js
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com, *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, *.duolingo.com, us-central1-alight-creative.cloudfunctions.net, api.locket.camera, spclient.wg.spotify.com, api-v2.soundcloud.com, api.vsco.co
