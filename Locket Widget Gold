@@ -1,0 +1,10 @@
+#!name = Locket Widget Gold
+#!desc = Mở khóa các tính năng Gold/Premium của ứng dụng Locket Widget (Gửi ảnh HD, thêm nhiều bạn thân, tùy biến giao diện...).
+#!author = chxm1023
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Locket.png
+
+[Script]
+LocketGold = type=http-response,pattern=^https:\/\/api\.locket\.camera\/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Locket.js
+
+[MITM]
+hostname = %APPEND% api.locket.camera
